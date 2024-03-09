@@ -1,0 +1,43 @@
+<!-- welcome.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Welcome Page</title>
+        <link rel="stylesheet" href="home.css" />
+    </head>
+    <body>
+        <header>
+            <h1 class="Logo">Ecart</h1>
+            <div onclick="ProfilePopup()" class="profile-photo">
+                <img id="user-img" src="" />
+                <div id="popupMain">
+                    <div id="Popup">
+                        <P id="user-name"></P>
+                        <button onclick="logoutBtn()">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+        <script src="script.js"></script>
+
+        <script>
+            const Popup = document.getElementById('popupMain');
+
+            // Function to toggle the visibility of the popup
+            const ProfilePopup = () => {
+                if (Popup.style.display === 'block') {
+                    Popup.style.display = 'none';
+                } else {
+                    Popup.style.display = 'block';
+                }
+            };
+        </script>
+    </body>
+</html>
